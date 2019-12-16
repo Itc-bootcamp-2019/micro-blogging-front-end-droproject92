@@ -1,23 +1,19 @@
 :root {
-background-color: #15202B;
-margin: 0;
-padding: 0 15%;
-font-family: roboto;
-
+  background-color: #15202b;
+  margin: 0;
+  padding: 0 15%;
+  font-family: "Roboto", sans-serif;
 }
 
-.nav-bar{
+.nav-bar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-size: medium;
   font-weight: 600;
   height: 58px;
-  border: 1px solid yellow;
   border-radius: 6px;
-  background-color: #343A40;
-
-
+  background-color: #343a40;
 }
 
 li {
@@ -31,4 +27,80 @@ a {
 a:hover {
   color: #fff;
   text-decoration: underline;
+}
+
+.display-tweet-box {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.tweet-box {
+  position: relative;
+  margin: 4% 0;
+  height: 15rem;
+  width: 70%;
+  border: 2px solid #cccccc;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+textarea {
+  margin: 2%;
+  width: 95%;
+  height: 80%;
+  background-color: #15202b;
+  color: #fff;
+  border: none;
+  resize: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 19px;
+}
+
+.tweet-btn {
+  position: absolute;
+  right: 1%;
+  bottom: 6%;
+  width: 68px;
+  height: 34px;
+  border: none;
+  background: #007bff;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.display-tweet-list {
+  display: flex;
+  justify-content: center;
+}
+
+.tweet-msg {
+  display: flex;
+  flex-direction: column;
+  background: #343a40;
+  height: 10rem;
+  width: 70%;
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin: 2%;
+}
+
+.tweet-msg-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1%;
+  color: #6c757d;
+}
+
+.tweet-msg-text {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1%;
+  color: #fff;
 }

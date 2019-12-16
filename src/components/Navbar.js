@@ -6,7 +6,7 @@ import {
     Link
   } from "react-router-dom";
 
-function Navbar () {
+function NavBar () {
 
     return (
 <Router>
@@ -37,4 +37,4 @@ function Navbar () {
 
 
 
-    export default Navbar
+    export default NavBar
