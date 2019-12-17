@@ -15,10 +15,6 @@ class TweetBox extends React.Component {
     
   };
 
-  DisabledButtonMsg = (event) => {
-
-  }
-
   render() {
     return (
       <div className="display-tweet-box">
