@@ -4,16 +4,24 @@ class TweetBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chars_left: 140
+      isValid: false,
+      isZero: false,
+      username:'',
+      content: ''
     };
   }
-  HandleWordCount = (event) => {
-    const charCount = event.target.value.length;
-    const charsLength = 140 - charCount;
-    this.setState({ chars_left:charsLength });
-    console.log(this.state.chars_left);
-    
+  handleOnChange = (event) => {
+    const textInput = event.target.value;
+    const charCount = textInput.length;
+    const isValid = charCount < 141;
+    const isZero = charCount > 0;
+    console.log(charCount);
+    this.setState({ 
+        isValid:isValid,
+        content: textInput
+     });
   };
+
 
   render() {
     return (
@@ -23,18 +31,17 @@ class TweetBox extends React.Component {
             className="text-box"
             placeholder="What you have in mind?..."
             name="tweet"
-            onChange={this.HandleWordCount}
+            onChange={this.handleOnChange}
           ></textarea>
           <button
             type="button"
-            onClick={() => console.log('tweet')}
-            disabled={this.state.chars_left <= 0 ? "disabled" : null}
+            onClick={() => this.props.onChange(this.state.username,(new Date()).toISOString(),this.state.content)}
+            disabled={!this.state.isValid || this.state.isZero}
             className="tweet-btn"
           >
             Tweet
           </button>
-          {this.state.chars_left <= 0 ? <p className="max-charac-msg">The tweet can't contain more then 140 chars.</p> : null}
-          
+          {!this.state.isValid && <p className="max-charac-msg">The tweet can't contain more then 140 chars or zero characters.</p>}
           
         </div>
       </div>
