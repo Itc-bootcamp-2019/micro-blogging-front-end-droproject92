@@ -15,7 +15,6 @@ class TweetBox extends React.Component {
     const charCount = textInput.length;
     const isValid = charCount < 141;
     const isZero = charCount > 0;
-    console.log(charCount);
     this.setState({ 
         isValid:isValid,
         content: textInput
