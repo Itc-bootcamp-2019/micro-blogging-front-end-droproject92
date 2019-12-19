@@ -6,7 +6,7 @@ class TweetBox extends React.Component {
     this.state = {
       isValid: false,
       isZero: false,
-      username:'',
+      username:'Daniel',
       content: ''
     };
   }
