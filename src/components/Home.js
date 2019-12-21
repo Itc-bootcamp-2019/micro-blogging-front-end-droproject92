@@ -1,7 +1,7 @@
 import React from "react";
 import TweetBox from "./TweetBox";
 import TweetMsg from "./TweetMsg";
-import {getTweetsList, postTweet} from "../lib/api"
+import { getTweetsList, postTweet } from "../lib/api";
 
 class Home extends React.Component {
   constructor(props) {
@@ -11,27 +11,26 @@ class Home extends React.Component {
     };
   }
 
-   async handleData () {
-       const response = await getTweetsList();
-       const { data } = response;
-       console.log('data', data)
-       this.setState({ tweets: data.tweets });
+  async handleData() {
+    const response = await getTweetsList();
+    const { data } = response;
+    this.setState({ tweets: data.tweets });
+  }
 
-   }
+  componentDidMount() {
+    this.handleData();
+    // this.handleInput();
+  }
 
-   componentDidMount () {
-       this.handleData();
-   }
-
-   async handleInput () {
-    // const response = await getTweetsList();
-    // console.log(response);
-}
-
+  async handleInput(userName, date, content) {
+    const tweet = { userName, date, content };
+    await postTweet({tweet: tweet})
+    this.setState({ tweets: [{userName, date, content},...this.state.tweets] });
+  }
 
   render() {
     const { tweets } = this.state;
-    console.log(tweets);
+    const {tweet} = this.state;
     return (
       <div>
         <TweetBox

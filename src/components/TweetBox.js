@@ -25,7 +25,7 @@ class TweetBox extends React.Component {
   render() {
     return (
       <div className="display-tweet-box">
-        <div className="tweet-box">
+        <form className="tweet-box">
           <textarea
             className="text-box"
             placeholder="What you have in mind?..."
@@ -42,7 +42,7 @@ class TweetBox extends React.Component {
           </button>
           {!this.state.isValid && <p className="max-charac-msg">The tweet can't contain more then 140 chars or zero characters.</p>}
           
-        </div>
+        </form>
       </div>
     );
   }
