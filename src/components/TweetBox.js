@@ -6,18 +6,17 @@ class TweetBox extends React.Component {
     this.state = {
       isValid: false,
       isZero: false,
-      username:'Daniel',
-      content: ''
+      userName:' ',
+      content: ' '
     };
   }
   handleOnChange = (event) => {
     const textInput = event.target.value;
     const charCount = textInput.length;
     const isValid = charCount < 141;
-    const isZero = charCount > 0;
     this.setState({ 
         isValid:isValid,
-        content: textInput
+        content: textInput,
      });
   };
 
@@ -34,8 +33,8 @@ class TweetBox extends React.Component {
           ></textarea>
           <button
             type="button"
-            onClick={() => this.props.onChange(this.state.username,(new Date()).toISOString(),this.state.content)}
-            disabled={!this.state.isValid || this.state.isZero}
+            onClick={() => this.props.onChange(this.state.userName,(new Date()).toISOString(),this.state.content)}
+            disabled={!this.state.isValid || this.state.isZero || this.props.isLoading}
             className="tweet-btn"
           >
             Tweet

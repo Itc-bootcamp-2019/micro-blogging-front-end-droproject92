@@ -129,3 +129,14 @@ textarea {
   margin: 1%;
   color: #fff;
 }
+
+.max-charac-msg{
+  display:none;
+
+}
+
+.page-loader{
+  display: flex;
+  justify-content:center;
+  
+}
