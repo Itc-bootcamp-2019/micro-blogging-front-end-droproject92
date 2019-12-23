@@ -6,7 +6,7 @@ class TweetBox extends React.Component {
     this.state = {
       isValid: false,
       isZero: false,
-      userName:localStorage.getItem(JSON.parse(localStorage.getItem('userName'))),
+      userName:JSON.parse(localStorage.getItem('userName')),
       content: ' '
     };
   }
