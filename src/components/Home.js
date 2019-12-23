@@ -29,7 +29,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.handleData();
-    // this.handleInput();
+    this.handleInput();
   }
 
   async handleInput(userName, date, content) {
@@ -64,7 +64,7 @@ class Home extends React.Component {
         {tweets.map(tweet => (
           <TweetMsg
             key={tweet.id}
-            userName={tweet.username}
+            userName={tweet.userName}
             content={tweet.content}
             date={tweet.date}
           />

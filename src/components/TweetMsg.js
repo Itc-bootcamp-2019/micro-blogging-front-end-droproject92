@@ -6,7 +6,7 @@ const TweetMsg = (props) => {
     <div className="display-tweet-list">
       <div className="tweet-msg">
           <div className="tweet-msg-info">
-              <p>{props.username}</p>
+              <p>{props.userName}</p>
               <p>{props.date}</p>
           </div>
           <div className="tweet-msg-text">

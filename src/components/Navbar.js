@@ -1,15 +1,9 @@
-import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import React from "react";
+import Profile from "./Profile";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-function NavBar () {
-
-    return (
-<Router>
+function NavBar() {
+  return (
     <div>
       <nav className="nav-bar">
         <ul>
@@ -19,22 +13,12 @@ function NavBar () {
         </ul>
         <ul>
           <li>
-          <Link to="/profile" > Profile </Link>
+            <Link to="/profile"> Profile </Link>
           </li>
         </ul>
       </nav>
-      <Switch>
-        <Route exact path="/profile">
-        </Route>
-        <Route path="/profile/:user">
-        </Route>
-      </Switch>
     </div>
-    </Router>
-    )
+  );
 }
 
-
-
-
-    export default NavBar
+export default NavBar;
