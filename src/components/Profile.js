@@ -5,7 +5,8 @@ class Profile extends React.Component {
     super(props);
     this.state = {
       userName: '',
-      isLoading: false
+      isLoading: false,
+      isSaved: false
     };
   }
 
@@ -18,6 +19,9 @@ class Profile extends React.Component {
 
   handleProfileOnClick() {
     localStorage.setItem('userName', JSON.stringify(this.state.userName));
+    this.setState({ 
+        isSaved: true
+    })
   }
 
   render() {
@@ -43,10 +47,18 @@ class Profile extends React.Component {
             <button
               className="profile-btn"
               onClick={() => this.handleProfileOnClick()}
+              disabled={
+                this.state.isSaved
+              }
             >
               Save
             </button>
           </div>
+          {this.state.isSaved && ( 
+                <div className="user-saved">
+                    <h2>Profile been saved</h2>
+                </div>
+            )}
         </div>
       </div>
     );

@@ -8,6 +8,7 @@ import NewTweet from "./NewTweet"
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.handleData.bind(this);
     this.state = {
       isLoading: false,
       tweets: [],
@@ -31,8 +32,13 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    
     this.handleData();
-    this.handleInput();
+    setInterval(()=>{this.handleData()}, 6000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.handleData);
   }
 
   async handleInput(tweet) {

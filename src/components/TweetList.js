@@ -14,8 +14,8 @@ const TweetList = props => {
                 <div className="tweet-msg">
                   <div className="tweet-msg-info">
                     <div className="tweet-msg-header">
-                      <p>{tweet.userName}</p>
-                      <p>{tweet.date}</p>
+                      <p className="tweet-msg-header-p1">{tweet.userName}</p>
+                      <p className="tweet-msg-header-p2">{tweet.date}</p>
                     </div>
                     <div className="tweet-msg-text">
                       <p>{tweet.content}</p>

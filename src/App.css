@@ -43,6 +43,7 @@ a:hover {
   border: 2px solid #cccccc;
   box-sizing: border-box;
   border-radius: 6px;
+  outline: none;
 }
 
 textarea {
@@ -59,6 +60,7 @@ textarea {
   font-weight: normal;
   font-size: 1.2rem;
   line-height: 19px;
+  outline: none;
 }
 
 .tweet-btn {
@@ -78,8 +80,7 @@ textarea {
   background-color: grey;
 }
 
-.max-charac-msg {
-  display: none;
+.maxcharac {
   position: absolute;
   left: 1%;
   bottom: 6%;
@@ -97,6 +98,7 @@ textarea {
   border: 1px solid #f5c6cb;
   box-sizing: border-box;
   border-radius: 4px;
+  z-index: 1;
 }
 
 .display-tweet-list {
@@ -126,7 +128,7 @@ textarea {
 }
 
 .tweet-msg-text {
-  display: flex;
+  word-wrap: break-word;
   justify-content: flex-start;
   margin: 1%;
   color: #fff;
@@ -236,4 +238,61 @@ textarea {
   border-radius: 4px;
   color: #fff;
   font-weight: 600;
+}
+
+.profile-btn:disabled {
+  background-color: grey;
+}
+
+.user-saved {
+  display: inline;
+  background-color: #f8d7da;
+  color: #721c24;
+  font-size: 11px;
+  font-weight: 400;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 19px;
+}
+
+
+@media (max-width: 310px) {
+
+  .tweet-box{
+    width: 100%;
+  }
+  .tweet-msg{
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .tweet-box{
+    width: 90%;
+  }
+  .tweet-msg{
+    width: 90%;
+  }
+
+}
+
+
+
+@media (max-width: 550px) { 
+  .tweet-msg-header-p2 {
+    margin-left: 25%;
+  }
+}
+
+
+@media (max-width: 992px) { 
+
+}
+
+@media (max-width: 1200px) { 
+
 }
